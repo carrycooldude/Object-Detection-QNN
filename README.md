@@ -61,3 +61,8 @@ This project performs the following pipeline to unlock NPU performance:
 **Low FPS (~2-3 FPS)**
 - This means the NPU failed to initialize and it fell back to CPU. Check the console output for warnings.
 - Ensure `QnnHtp.dll` can be found (the scripts handle this, but system PATH issues can occur).
+
+
+https://github.com/user-attachments/assets/b14b2a68-00e0-45aa-a753-e13b5d37b89f
+
+
