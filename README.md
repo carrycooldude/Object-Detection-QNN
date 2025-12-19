@@ -11,7 +11,16 @@ Run **YOLOv8** object detection at **50+ FPS** on the Windows ARM Hexagon NPU us
 - **Drivers**: Ensure you have the latest Qualcomm NPU drivers (Windows Update usually handles this).
 - **Python**: Python 3.10+ (ARM64 Native).
 
-## 🚀 Quick Start
+## 🌟 For Beginners (The Easiest Way)
+
+If you are new to command line:
+1.  **Clone/Download** this repository.
+2.  Double-click **`run.bat`**.
+    - It will automatically install the necessary libraries (`onnxruntime-qnn`, etc.).
+    - It will launch the NPU visualizer.
+3.  Open **Task Manager** (`Ctrl+Shift+Esc`), go to **Performance** -> **NPU** to see the magic!
+
+## 🚀 Manual Quick Start (For Developers)
 
 1. **Install Dependencies**
    ```powershell
