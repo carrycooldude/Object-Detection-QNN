@@ -1,0 +1,4 @@
+ultralytics>=8.3.0
+onnxruntime-qnn>=1.23.0
+numpy>=1.26.0
+opencv-python-headless>=4.5.0

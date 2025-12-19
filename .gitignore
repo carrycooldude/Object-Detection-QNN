@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+runs/
+datasets/
+.vscode/
+.idea/
+
+# Ignore large raw models, but keep the quantized one for the demo
+yolov8s.pt
+# yolov8s.onnx # Optional: Ignore the float32 ONNX if not needed
