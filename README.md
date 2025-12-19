@@ -17,7 +17,7 @@ If you are new to command line:
 1.  **Clone/Download** this repository.
 2.  Double-click **`run.bat`**.
     - It will automatically install the necessary libraries (`onnxruntime-qnn`, etc.).
-    - It will launch the NPU visualizer.
+    - It will launch the NPU performance visualizer.
 3.  Open **Task Manager** (`Ctrl+Shift+Esc`), go to **Performance** -> **NPU** to see the magic!
 
 ## 🚀 Manual Quick Start (For Developers)
@@ -28,10 +28,10 @@ If you are new to command line:
    ```
    *Note: If `onnxruntime-qnn` fails to install or load, ensure you don't have conflicting `onnxruntime` packages installed.*
 
-2. **Run the NPU Demo**
-   The demo runs a sustained inference visualizer so you can check Task Manager.
+2. **Run the NPU Performance Test**
+   The script runs a sustained inference visualizer so you can check Task Manager.
    ```powershell
-   python demo_npu.py --duration 30
+   python npu_realtime_inference.py --duration 30
    ```
    **Expected Output:**
    ```text
@@ -45,7 +45,7 @@ If you are new to command line:
 This project performs the following pipeline to unlock NPU performance:
 
 1.  **Export**: YOLOv8 PyTorch model -> ONNX (Float32).
-2.  **Quantize**: ONNX -> **INT8 QDQ ONNX** (using `prepare_model.py` with COCO128 calibration data).
+2.  **Quantize**: ONNX -> **INT8 QDQ ONNX** (using `quantize_yolov8.py` with COCO128 calibration data).
 3.  **Inference**: Uses `onnxruntime-qnn` with the `QnnHtp.dll` backend for hardware acceleration.
     *   **CPU**: ~2 FPS (Slow)
     *   **NPU**: ~50-65 FPS (Real-time)
@@ -54,11 +54,12 @@ This project performs the following pipeline to unlock NPU performance:
 
 | File | Description |
 | :--- | :--- |
-| `demo_npu.py` | Visual demo script for NPU usage verification |
-| `benchmark.py` | Technical benchmark for latency/throughput measurement |
-| `prepare_model.py` | Script to re-generate the quantized model locally |
-| `download_data.py` | Downloads COCO128 calibration dataset |
+| `npu_realtime_inference.py` | Visual performance script for NPU usage verification |
+| `technical_benchmark.py` | Professional benchmark for latency/throughput measurement |
+| `quantize_yolov8.py` | Script to re-generate the quantized model locally |
+| `download_assets.py` | Downloads COCO128 calibration dataset |
 | `yolov8s_qdq.onnx` | Pre-quantized INT8 model (Ready to run) |
+| `data_config.yaml` | Dataset configuration for YOLO validation |
 
 ## 🐛 Troubleshooting
 

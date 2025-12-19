@@ -22,11 +22,11 @@ if %errorlevel% neq 0 (
 )
 
 echo.
-echo [INFO] Starting NPU Demo...
+echo [INFO] Starting NPU Performance Test...
 echo        (Keep an eye on Task Manager -> Performance -> NPU)
 echo.
 
-python demo_npu.py --duration 30
+python npu_realtime_inference.py --duration 30
 
 echo.
 echo [DONE] Demo finished.
